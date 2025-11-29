@@ -159,85 +159,147 @@ html {
 
 /* 
    3. HERO SECTIONS (HOME & INNER PAGES)*/
-/* Home Hero */
-.hero {
-    height: 100vh;
+/* --- Hero Section Styles --- */
+.hero-section {
+    position: relative;
     width: 100%;
-    background: linear-gradient(135deg, rgba(15, 15, 30, 0.766) 0%, rgba(26, 26, 46, 0.6) 50%, rgba(22, 33, 62, 0.6) 100%),
-        url('https://blog.travisso.com/wp-content/uploads/sites/5/2018/12/DreesModelHomeLynmarII.jpeg') center/cover no-repeat;
+    height: 85vh;
+    min-height: 600px;
+    background-image: url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    color: white;
-    padding: 0 50px;
-    position: relative;
-    overflow: hidden;
+    font-family: sans-serif;
 }
 
+/* Background Dark Tint */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(230, 57, 70, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(0, 166, 90, 0.06) 0%, transparent 50%);
-    z-index: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
 }
 
+/* Content Wrapper */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-.hero-label {
-    font-size: 0.85rem;
-    letter-spacing: 2.5px;
-    margin-bottom: 25px;
-    color: #ee940eea;
+/* Glass Card Box */
+.hero-card {
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 50px;
+    max-width: 650px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-title {
+    font-size: 52px;
+    line-height: 1.1;
+    font-weight: 800;
+    margin: 0 0 25px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Orange Line Side */
+.hero-description-box {
+    border-left: 5px solid #f95628;
+
+    padding-left: 20px;
+    margin-bottom: 35px;
+}
+
+.hero-description {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #eeeeee;
+    margin: 0;
+}
+
+/* Buttons Area */
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+/* Common Button Style */
+.btn {
+    padding: 14px 35px;
+    font-size: 16px;
     font-weight: 700;
-    text-transform: uppercase;
-}
-
-.cta-button {
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
     display: inline-block;
-    padding: 14px 40px;
-    font-size: 0.9rem;
-    background: #ee940eb0;
-    color: white;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
 }
 
-.cta-button:hover {
-    background: #ee940eea;
-    transform: translateY(-2px);
+/* Explore Now Button (White BG, Orange Text) */
+.btn-white {
+    background-color: #ffffff;
+    color: #f95628;
+
+    border: 2px solid #ffffff;
 }
 
-.cta-button-outline {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 14px 40px;
-    font-size: 0.9rem;
-    background: #ffffff62;
-    color: white;
-
-    border-radius: 3px;
-    cursor: pointer;
-
-    text-decoration: none;
-
-    text-transform: uppercase;
+.btn-white:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.cta-button-outline:hover {
-    color: black;
-    background: rgb(255, 255, 255);
+/* Learn More Button (Transparent BG, White Border) */
+.btn-outline {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
 }
 
+.btn-outline:hover {
+    background-color: #ffffff;
+    color: #333333;
+    transform: translateY(-3px);
+}
 
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero-card {
+        padding: 30px;
+        max-width: 100%;
+    }
+
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
 
 /* Breadcrumb for Contact Page */
 .breadcrumb {
@@ -2735,4 +2797,5 @@ textarea {
     .form-row {
         display: block;
     }
+
 }
